@@ -46,7 +46,7 @@ impl Network<'_>{
         self.data.push(current.clone());
         }
 
-        current.transpose().data[0].to_owned();
+        current.transpose().data[0].to_owned()
     } 
 
     pub fn back_propagate(&mut self, outputs: Vec<f64>, targets: Vec<f64>){

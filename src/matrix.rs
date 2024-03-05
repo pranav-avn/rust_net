@@ -116,5 +116,6 @@ impl Matrix{
                 res.data[j][i] = self.data[i][j];
             }
         }
+        res
     }
 }
