@@ -16,7 +16,7 @@ impl Network<'_>{
 
         for i in 0..layers.len()-1{
             weights.push(Matrix::random(layers[i+1], layers[i]));
-            biases.push(Matrix::random(layers[i+1], layers[i]));
+            biases.push(Matrix::random(layers[i+1], 1));
         }
 
         Network{
@@ -38,15 +38,12 @@ impl Network<'_>{
         self.data = vec![current.clone()];
 
         for i in 0..self.layers.len() - 1{
-            current = self.weights[i]
-            .multiply(&current)
-            .add(&self.biases[i])
-            .map(self.activation.function);
+            current = self.weights[i].multiply(&current).add(&self.biases[i]).map(self.activation.function);
 
         self.data.push(current.clone());
         }
 
-        current.transpose().data[0].to_owned()
+        current.data[0].to_owned()
     } 
 
     pub fn back_propagate(&mut self, outputs: Vec<f64>, targets: Vec<f64>){

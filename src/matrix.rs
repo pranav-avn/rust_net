@@ -68,15 +68,15 @@ impl Matrix{
         res
     }
 
-    pub fn add(&mut self, other: &Matrix) -> Matrix{
-        if self.rows != other.rows || self.cols != other.cols{
+    pub fn add(&self, other: &Matrix) -> Matrix{
+        if self.rows != other.rows || self.cols != other.cols {
             panic!("Dimension Error")
         }
 
         let mut res = Matrix::zeros(self.rows, self.cols);
         for i in 0..self.rows{
             for j in 0..self.cols{
-                res. data[i][j] = self.data[i][j] + other.data[i][j];
+                res.data[i][j] = self.data[i][j] + other.data[i][j];
             }
         }
         res
@@ -91,7 +91,7 @@ impl Matrix{
         let mut res = Matrix::zeros(self.rows, self.cols);
         for i in 0..self.rows{
             for j in 0..self.cols{
-                res. data[i][j] = self.data[i][j] - other.data[i][j];
+                res.data[i][j] = self.data[i][j] - other.data[i][j];
             }
         }
         res
