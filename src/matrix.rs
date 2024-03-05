@@ -1,4 +1,4 @@
-use rand::thread_rng;
+use rand::{thread_rng, Rng};
 #[derive(Clone)]
 pub struct Matrix{
     pub rows: usize,
@@ -11,7 +11,7 @@ impl Matrix{
         Matrix{
             rows,
             cols,
-            data: vec![vec![0.0, cols], rows],
+            data: vec![vec![0.0; cols]; rows],
         }
     }
 
@@ -31,7 +31,7 @@ impl Matrix{
     pub fn from(data: Vec<Vec<f64>>) -> Matrix{
         Matrix{
             rows: data.len(),
-            cols: data[0].len,
+            cols: data[0].len(),
             data,
         }
     }
