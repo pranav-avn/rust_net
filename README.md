@@ -3,4 +3,4 @@
 ## Todo
 - [x] Implement basic Matrix operations
 - [ ] Implement Activation Functions
-- [ ] Implement the actual network
+- [x] Implement the actual network
