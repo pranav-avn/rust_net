@@ -54,6 +54,20 @@ impl Matrix{
         res
     }
 
+    pub fn dot_product(&self, other: &Matrix) -> Matrix{
+        if self.rows != other.rows || self.cols != other.cols{
+            panic!("Attempted to dot multiply by matrices of incorrect dimensions");
+        }
+
+        let mut res = Matrix::zeros(self.rows, self.cols);
+        for i in 0..self.rows{
+            for j in 0..self.cols{
+                res.data[i][j] = self.data[i][j] * other.data[i][j];
+            }
+        }
+        res
+    }
+
     pub fn add(&mut self, other: &Matrix) -> Matrix{
         if self.rows != other.rows || self.cols != other.cols{
             panic!("Dimension Error")
