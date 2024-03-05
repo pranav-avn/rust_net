@@ -2,5 +2,5 @@
 
 ## Todo
 - [x] Implement basic Matrix operations
-- [] Implement Activation Functions
-- [] Implement the actual network
+- [ ] Implement Activation Functions
+- [ ] Implement the actual network
